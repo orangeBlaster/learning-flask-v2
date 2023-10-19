@@ -10,16 +10,25 @@
       #banner {
         height: 360px;
         width: 100%;
+        object-fit: cover;
+        margin-bottom: 16px;
       }
       
     </style>
   </head>
   <body>
+  {% include 'nav.html' %}
+  <img id="banner" class="img-fluid" src="https://learning-flask--levincozza.repl.co/static/career-image.jpg" alt="banner">
   <div class="container">
     <h1 class="text-center mt-2 mb-4">Jovian Careers</h1>
-    <img id="banner" class="img-fluid" src="https://learning-flask--levincozza.repl.co/static/career-image.jpg" alt="banner">
-    <h2 class="text-center mt-2">About Jovian</h2>
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate odio ut enim blandit. Cras fermentum odio eu feugiat pretium nibh. At auctor urna nunc id cursus metus. Arcu ac tortor dignissim convallis aenean et tortor. Sit amet est placerat in egestas erat. Tristique magna sit amet purus gravida quis. Eget arcu dictum varius duis.</p>
+    <div class="row" style="margin-bottom: 16px;">
+      <div class="col-md-6">
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vulputate odio ut enim blandit. Cras fermentum odio eu feugiat pretium nibh. At auctor urna nunc id cursus metus. Arcu ac tortor dignissim convallis aenean et tortor. Sit amet est placerat in egestas erat. Tristique magna sit amet purus gravida quis. Eget arcu dictum varius duis.</p>
+      </div>
+      <div class="d-none d-md-block col-md-6">
+      <img src="/static/people.jpg" style="height:320px;border-radius:10px;">
+      </div>
+    </div>
   <h2 class="text-center mt-2 mb-4">Job Openings</h2>
   <div>
     {% for job in jobs%}
@@ -27,9 +36,9 @@
     {% endfor %} 
   </div>
   <div class="text-center">
-  <button class="btn btn-primary btn-large">Contact Us</button>
-    <p class="mt-4">Copyright 2022, Jovian</p>
+  <a href="mailto:levasauras@gmail.co?subject=Question%20about%20Job%20Openings&body=NAME%3A%20%3Cyour%20name%3E%0D%0AQUESTION%3A%20%3Cyour%20question%3E%0D%0A%0D%0A%0D%0A" class="btn btn-primary btn-large">Contact Us</a>
   </div>
   </div>
+  {% include 'footer.html' %}
   </body>
 </html>
